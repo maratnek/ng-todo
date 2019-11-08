@@ -1,0 +1,23 @@
+<mat-list>
+    <mat-list-item class="list-item" *ngFor="let word of words">
+      <h3 matLine>{{word.name}}</h3>
+      <!-- <p matLine> -->
+        <!-- <span> {{word.date}} </span> -->
+        <!-- <span class="demo-2"> -- {{message.content}} </span> -->
+      <!-- </p> -->
+
+      <button mat-icon-button>
+        <mat-icon>info</mat-icon>
+      </button>
+
+      <mat-chip-list>
+        <mat-chip color="accent" selected>{{word.repeat_mention/word.need_repeat*100}}%</mat-chip>
+      </mat-chip-list>
+
+      <div class="date">
+        {{word.date |  date:'short'}}
+      </div>
+
+
+    </mat-list-item>
+  </mat-list>
