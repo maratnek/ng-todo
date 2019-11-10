@@ -8,7 +8,7 @@ import {Storage} from '../storage/storage';
 })
 export class StorageService {
 
-  storage: Storage;
+  storage : Storage = new Storage();
 
   constructor() { }
 
@@ -19,9 +19,11 @@ export class StorageService {
 
   getAllList() {
     let count = 10;
-    return [
-      { name: "first", repeat_mention: 1, need_repeat: count, date: new Date() },
-      { name: "second", repeat_mention: 3, need_repeat: count, date: new Date() }
-    ];
+    console.log('Get all list');
+    return this.storage.list();
+    // return [
+    //   { name: "first", repeat_mention: 1, need_repeat: count, date: new Date() },
+    //   { name: "second", repeat_mention: 3, need_repeat: count, date: new Date() }
+    // ];
   }
 }
